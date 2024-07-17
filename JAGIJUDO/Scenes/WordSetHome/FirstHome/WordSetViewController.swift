@@ -29,6 +29,7 @@ class WordSetViewController: UIViewController {
         $0.layer.cornerCurve = .continuous
         $0.layer.shadowOffset = CGSize(width: 3, height: 3)
         $0.layer.masksToBounds = false
+        $0.accessibilityLabel = "단어장 세트 추가하기"
     }
     
     private let popUpView = UIView().then {
@@ -43,6 +44,7 @@ class WordSetViewController: UIViewController {
         $0.textColor = .black
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
+        $0.accessibilityLabel = "아래 버튼을 눌러 세트 추가하기"
     }
         
     init(dependency: Dependency) {
@@ -185,6 +187,13 @@ extension WordSetViewController: UIScrollViewDelegate {
        }
     }
 }
+
+func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+           cell.accessibilityLabel = "왼쪽으로 스와이프하여 삭제 가능"
+        }
+    }
+
 
 extension WordSetViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {

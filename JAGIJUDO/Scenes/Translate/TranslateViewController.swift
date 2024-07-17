@@ -47,6 +47,7 @@ final public class TranslateViewController: UIViewController {
     
     private lazy var resultBaseView = UIView().then {
         $0.backgroundColor = .systemBackground
+        $0.accessibilityLabel = "번역 할 언어 입력"
     }
     
     private lazy var resultLabel = UILabel().then {

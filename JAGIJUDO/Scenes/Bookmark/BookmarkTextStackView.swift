@@ -41,3 +41,4 @@ final class BookmarkTextStackView: UIStackView {
         [languageLabel, textLabel].forEach { addArrangedSubview($0) }
     }
 }
+

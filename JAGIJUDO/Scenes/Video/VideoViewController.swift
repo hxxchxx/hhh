@@ -43,7 +43,9 @@ final public class VideoViewController: UIViewController {
         setupTableView()
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "강의"
+        view.accessibilityLabel = "강의"
         view.isAccessibilityElement = false
+       
     }
     
     private func setupNavigationItem() {

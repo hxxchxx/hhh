@@ -18,6 +18,7 @@ class WordListCreateViewController: UIViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         $0.layer.cornerRadius = 8
         $0.layer.cornerCurve = .continuous
+        $0.accessibilityLabel = "세트 추가하기"
 
         $0.layer.masksToBounds = false
     }
@@ -31,6 +32,7 @@ class WordListCreateViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.cornerCurve = .continuous
         $0.layer.masksToBounds = false
+        $0.accessibilityLabel = "세트 추가 취소"
     }
     
     private let titleLabel: UILabel = {
@@ -39,6 +41,7 @@ class WordListCreateViewController: UIViewController {
         label.text = "단어를 입력하세요"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.accessibilityLabel = "단어를 입력하세요"
         return label
     }()
     private let wordTextField: UITextField = {
@@ -47,6 +50,7 @@ class WordListCreateViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.attributedPlaceholder = NSAttributedString(string: "단어를 입력하세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray])
         textField.backgroundColor = .white
+        textField.accessibilityLabel = "단어를 입력하세요"
         return textField
     }()
     
@@ -56,6 +60,7 @@ class WordListCreateViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.attributedPlaceholder = NSAttributedString(string: "뜻을 입력하세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray])
         textField.backgroundColor = .white
+        textField.accessibilityLabel = "뜻을 입력하세요"
         return textField
     }()
     

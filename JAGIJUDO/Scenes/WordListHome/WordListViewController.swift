@@ -27,6 +27,7 @@ class WordListViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.cornerCurve = .continuous
         $0.layer.masksToBounds = false
+        $0.accessibilityLabel = "추가하기"
     }
     
     private let testButton = UIButton().then {
@@ -38,6 +39,8 @@ class WordListViewController: UIViewController {
         $0.layer.cornerRadius = 8
         $0.layer.cornerCurve = .continuous
         $0.layer.masksToBounds = false
+        $0.accessibilityLabel = "학습하기"
+
     }
     
     private let popUpView = UIView().then {
@@ -53,6 +56,8 @@ class WordListViewController: UIViewController {
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
         $0.numberOfLines = 2
+        $0.accessibilityLabel = "추가 하기 버튼을 눌러 단어를 생성"
+
     }
     
     private let secondPopUpView = UIView().then {
@@ -68,6 +73,7 @@ class WordListViewController: UIViewController {
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
         $0.numberOfLines = 2
+        $0.accessibilityLabel = "단어 5개 이상 부터 학습 가능"
     }
         
     init(dependency: Dependency) {

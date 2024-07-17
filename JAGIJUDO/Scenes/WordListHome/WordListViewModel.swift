@@ -63,7 +63,9 @@ class WordListViewModel: WordStorableViewModelType {
                 if words.count >= 5 {
                     vm.coordinator.push(at: .main, scene: .test, sectionStorage: vm.storage, animated: true)
                 } else {
-                    AlertView.showXMark("단어 5개 이상부터 가능합니다")
+                    let message = "단어 5개 이상부터 가능합니다"
+                    UIAccessibility.post(notification: .announcement, argument: message)
+                    AlertView.showXMark(message)
                 }
             }
             .dispose()
