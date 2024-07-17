@@ -19,6 +19,7 @@ class WordSetCreateViewController: UIViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         $0.layer.cornerRadius = 8
         $0.layer.cornerCurve = .continuous
+        $0.accessibilityLabel = "추가"
 
         $0.layer.masksToBounds = false
     }
@@ -31,18 +32,21 @@ class WordSetCreateViewController: UIViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         $0.layer.cornerRadius = 8
         $0.layer.cornerCurve = .continuous
+        $0.accessibilityLabel = "취소"
         $0.layer.masksToBounds = false
     }
     
     private let titleLabel = UILabel().then {
         $0.text = "제목을 입력하세요"
         $0.textAlignment = .center
+        $0.accessibilityLabel = "제목을 입력"
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
     }
     
     private let titleTextField = UITextField().then {
         $0.borderStyle = .roundedRect
         $0.attributedPlaceholder = NSAttributedString(string: "제목을 입력하세요", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray])
+        $0.accessibilityLabel = "" //공백으로 넣으면 텍스트 필드도 안 말할것 같아서 넣어봤습니다
         $0.backgroundColor = .white
     }
     

@@ -13,20 +13,24 @@ class WordSetCreateViewModel: WordSetStorableViewModelType {
         self.coordinator = dependency.coordinator
         self.storage = dependency.storage
     }
-    
-    func create(_ viewController: UIViewController, title: String?) {
-        if let title = title, !title.isEmpty {
-            if !storage.createSet(title: title) {
-                AlertView.showXMark("동일한 제목으로 생성할 수 없습니다")
+
+        func create(_ viewController: UIViewController, title: String?) {
+            if let title = title, !title.isEmpty {
+                if !storage.createSet(title: title) {
+                    let message = "동일한 제목으로 생성할 수 없습니다"
+                    AlertView.showXMark(message)
+                    UIAccessibility.post(notification: .announcement, argument: message)
+                }
+            } else {
+                let message = "빈 제목으로 생성할 수 없습니다"
+                AlertView.showXMark(message)
+                UIAccessibility.post(notification: .announcement, argument: message)
             }
-        } else {
-            AlertView.showXMark("빈 제목으로 생성할 수 없습니다")
+            
+            coordinator.dismiss(viewController: viewController, animated: true)
         }
         
-        coordinator.dismiss(viewController: viewController, animated: true)
+        func cancel(_ viewController: UIViewController) {
+            coordinator.dismiss(viewController: viewController, animated: true)
+        }
     }
-    
-    func cancel(_ viewController: UIViewController) {
-        coordinator.dismiss(viewController: viewController, animated: true)
-    }
-}

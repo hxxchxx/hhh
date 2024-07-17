@@ -18,6 +18,7 @@ final class BookmarkTextStackView: UIStackView {
         $0.textColor = type.color
         $0.text = text
         $0.numberOfLines = 0
+       
     }
     
     init(language: Language, text: String, type: Type) {
@@ -39,6 +40,8 @@ final class BookmarkTextStackView: UIStackView {
         distribution = .equalSpacing
         spacing = 4.0
         [languageLabel, textLabel].forEach { addArrangedSubview($0) }
+        languageLabel.accessibilityLabel = "Language Label"
+        textLabel.accessibilityLabel = "Text Label"
     }
 }
 

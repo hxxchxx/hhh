@@ -44,7 +44,6 @@ class WordSetViewController: UIViewController {
         $0.textColor = .black
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
-        $0.accessibilityLabel = "아래 버튼을 눌러 세트 추가하기"
     }
         
     init(dependency: Dependency) {

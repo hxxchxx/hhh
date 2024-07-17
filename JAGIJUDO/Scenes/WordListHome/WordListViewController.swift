@@ -73,7 +73,7 @@ class WordListViewController: UIViewController {
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
         $0.numberOfLines = 2
-        $0.accessibilityLabel = "단어 5개 이상 부터 학습 가능"
+        
     }
         
     init(dependency: Dependency) {

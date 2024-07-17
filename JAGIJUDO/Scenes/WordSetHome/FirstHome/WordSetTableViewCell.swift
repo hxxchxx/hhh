@@ -4,7 +4,7 @@ import Then
 
 class WordSetTableViewCell: UITableViewCell {
     static let identifier = "WordSetTableViewCellIdentifier"
-        
+
     private let cardView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 8
@@ -16,6 +16,7 @@ class WordSetTableViewCell: UITableViewCell {
         $0.textColor = .black
         $0.textAlignment = .left
         $0.font = .systemFont(ofSize: 30, weight: .bold)
+        $0.accessibilityLabel = ""
     }
     
     private let dateLabel = UILabel().then {
